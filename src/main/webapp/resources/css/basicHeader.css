@@ -1,0 +1,56 @@
+.book-container {
+    position: relative;
+}
+
+.book-title {
+    margin: 0;
+
+}
+
+.button-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.minimize-button,
+.maximize-button,
+.close-button {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+}
+
+.close-button {
+    background-color: red;
+    color: white;
+}
+
+.close-button:hover {
+    background-color: darkred;
+}
+.container-fluid {
+    display: flex;
+}
+
+#divM{
+    border-bottom: 2px inset;
+}
+
+#divM, #navM{
+    margin: 0;
+    padding: 0;
+}
+
+#divM {
+    position: relative;
+}
+
+#btnMin, #btnMax, #btnClose {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
