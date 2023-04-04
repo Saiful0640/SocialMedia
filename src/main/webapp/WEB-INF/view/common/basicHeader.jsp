@@ -30,6 +30,10 @@
     .btn:hover{
         background-color: #e543aa;
     }
+    a {
+        text-decoration:none;
+        color: black;
+    }
 </style>
 </head>
 <body class="p-3 m-0 border-0 bd-example">

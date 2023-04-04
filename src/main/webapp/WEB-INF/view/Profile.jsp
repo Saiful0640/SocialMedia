@@ -7,9 +7,9 @@
 <div class="row">
 
     <div class="col-md-3">
-        <a class="nav-link me-5" href="#"><img id="photoImage" class="me-1" alt="image pay nai" src="/resources/file/profile.jpeg" style="width: 25px; height: 25px"><b><span><%out.print(session.getAttribute("name")); %></span></b></a>
-        <p>${message}</p>
-        <a id="lmenuname"></a>
+        <a class=" me-5" href="#"><img id="photoImage" class="me-1" alt="image pay nai" src="/resources/file/profile.jpeg" style="width: 25px; height: 25px;text-decoration:none "><b><span><%out.print(session.getAttribute("name")); %></span></b></a>
+       <%-- <p>${message}</p>--%>
+        <h6><a class="" href="" ><img src="/resources/file/watch.png" style="width: 30px; height: 30px; "> Watch</a></h6>
     </div>
     <div class="col-md-7">
         Post
