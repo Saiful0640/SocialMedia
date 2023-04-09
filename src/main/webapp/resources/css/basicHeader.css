@@ -82,3 +82,30 @@ a {
     border-radius: 50%;
     outline: 6px solid #e4e6eb;
 }
+.back{
+
+    position: relative;
+    height:312px;
+    width: 920px;
+    background-color: rgb(55, 159, 201);
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.front{
+    position:absolute;
+    height: 180px;
+    width: 180px;
+    background-color: red;
+    border: 2px solid white;
+    left: 40px;
+    bottom: -40px;
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+}

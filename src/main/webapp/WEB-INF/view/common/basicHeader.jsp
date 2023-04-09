@@ -19,9 +19,6 @@
 
     <style>
 
-
-
-
     </style>
 
 </head>
@@ -79,7 +76,7 @@
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link me-5" href="#"><img id="photoImage" class="me-1" alt="image pay nai"
+                    <a class="nav-link me-5" href="/coverpage"><img id="photoImage" class="me-1" alt="image pay nai"
                                                            src="/resources/file/profile.jpeg"
                                                            style="width: 25px; height: 25px"><span><%out.print(session.getAttribute("name")); %></span></a>
                 </li>
@@ -94,7 +91,7 @@
                        aria-expanded="false">
                     </a>
                     <ul class="dropdown-menu" style="left: -310px;width: 350px; padding: 10px">
-                        <li class=" border-bottom border-3"><a class=" me-5 " href="#"><img id="photoImage" class="mx-1" alt="image pay nai"
+                        <li class=" border-bottom border-3"><a class=" me-5 " href="/coverpage"><img id="photoImage" class="mx-1" alt="image pay nai"
                                                            src="/resources/file/profile.jpeg"
                                                            style="width: 50px; height: 50px;text-decoration:none; float: left "><div><b><%out.print(session.getAttribute("name")); %></b><br><span>See your Profile</span></div>
                         </a>
