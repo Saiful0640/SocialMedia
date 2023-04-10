@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+
     <title>MyBookPlus</title>
 
     <style>
@@ -22,7 +28,9 @@
     </style>
 
 </head>
-<body class="p-3 m-0 border-0 bd-example">
+
+<body class="p-3 m-0 border-0 bd-example" style="font-family: 'Roboto', sans-serif; ">
+
 
 <div id="divM" class="container-fluid row">
     <div class="col-md-11">
@@ -59,7 +67,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active mx-5" aria-current="page" href="#"><i class="fa fa-home fa-lg"></i></a>
+                    <a class="nav-link active mx-5" aria-current="page" href="/sginIn"><i class="fa fa-home fa-lg"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mx-5" href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>

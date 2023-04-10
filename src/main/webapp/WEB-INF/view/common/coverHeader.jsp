@@ -11,10 +11,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="/resources/css/profile.css" rel="stylesheet">
-    <link href="/resources/css/basicHeader.css" rel="stylesheet">
+    <link href="/resources/css/cover.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+
+
     <title>MyBookPlus</title>
 
     <style>
@@ -22,7 +28,7 @@
     </style>
 
 </head>
-<body>
+<body style="font-family: 'Roboto', sans-serif; ">
 
 <nav id="navM" class="navbar navbar-expand-lg bg-light mb-3">
     <div class="container-fluid">
@@ -40,7 +46,7 @@
            <div class="col-md-8 d-flex">
                <ul class="navbar-nav  mb-2 mb-lg-0 list-inline mx-auto justify-content-center">
                    <li class="nav-item" >
-                       <a class="nav-link active mx-5" aria-current="page" href="#"><i class="fa fa-home fa-lg"></i></a>
+                       <a class="nav-link active mx-5" aria-current="page" href="/sginIn"><i class="fa fa-home fa-lg"></i></a>
                    </li>
                    <%-- <li class="nav-item">
                         <a class="nav-link mx-5" href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
