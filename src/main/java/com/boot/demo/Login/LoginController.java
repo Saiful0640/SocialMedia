@@ -80,7 +80,7 @@ public class LoginController {
         return mav;
     }*/
 
-    @RequestMapping(value = "sginIn", method = RequestMethod.POST)
+    @RequestMapping(value = "  ", method = RequestMethod.POST)
     public ModelAndView loginUser(@RequestParam("email") String email, @RequestParam("password") String password , HttpSession session){
 
         ModelAndView mav = new ModelAndView();

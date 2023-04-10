@@ -52,7 +52,7 @@
 </div>
 
 
-<nav id="navM" class="navbar navbar-expand-lg bg-light mb-3">
+<nav id="navM" class="navbar navbar-expand-lg bg-light mb-3 navbar-fixed-top">
     <div class="container-fluid">
 
         <a class="navbar-brand" href="#"><img alt="image pay nai" src="/resources/file/m.PNG"></a>

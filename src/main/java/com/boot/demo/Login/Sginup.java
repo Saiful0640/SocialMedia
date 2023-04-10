@@ -1,6 +1,7 @@
 package com.boot.demo.Login;
 
 import javax.persistence.*;
+import java.util.Arrays;
 
 @Entity
 @Table(name ="sginup")
@@ -15,6 +16,11 @@ public class Sginup {
     private String email;
     @Column(name = "password")
     private String password;
+
+    @Lob
+    @Column(name = "uimage", columnDefinition="BLOB")
+    private byte[] image;
+
 
     public Sginup() {
     }
@@ -58,6 +64,14 @@ public class Sginup {
         this.password = password;
     }
 
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
     @Override
     public String toString() {
         return "Sginup{" +
@@ -65,6 +79,7 @@ public class Sginup {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", image=" + Arrays.toString(image) +
                 '}';
     }
 }
