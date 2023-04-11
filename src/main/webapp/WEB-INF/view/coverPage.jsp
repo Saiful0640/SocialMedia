@@ -14,6 +14,7 @@
             <input type="file" id="coverPhoto" style="display: none;">
         </label>
 
+        <%--Profile page work start--%>
         <div>
             <img src="./lion.png" alt="" class="front">
             <label for="profilePhoto">
@@ -31,8 +32,27 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Modal body text goes here.</p>
+
+
+                        <div class="col-md-8 control-label">
+                            <label class="col-md-4 col-sm-3 control-label"><strong>Photo</strong></label>
+                            <div id="dvPreviewPhoto" class="col-md-4 control-label thumbnail" style="width: 150px; height: 150px">
+
+
+
+                                <img id="photoImage" alt="image pay nai" src="/resources/file/noImage.png" style="width: 150px; height: 150px" />
+
+
+                            </div>
+
+                            <div class="col-md-6 control-label">
+                                <input type="file" id="uploadPhoto" name="uploadPhoto" onchange="checkFileSize()"
+                                       class="valid" onkeypress="goToNext(event,'uploadSignature')">
+                                <p id="photoAttachmentmsg"></p>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary">Save changes</button>
@@ -41,6 +61,53 @@
             </div>
         </div>
 
+        <%--Profile page work END--%>
 
+        <script>
+
+            function checkFileSize() {
+                //alert('hello');
+                var oFile = document.getElementById("uploadPhoto"); // <input type="file" id="fileUpload" accept=".jpg,.png,.gif,.jpeg"/>
+                var filePath = oFile.value;
+                var fileTypeInvalidMsg = "File must be an image !!!"
+                var requiredfield = "File size must be less than 100 kb !!!";
+                //alert(oFile.size);
+
+                var allowedExtensions  = /^([a-zA-Z0-9\s_\\.\-:()])+(\.jpg|\.jpeg|\.gif|\.png|\.bmp)$/i;
+
+                if(!allowedExtensions.exec(filePath)){
+                    $("#uploadPhoto").val('');
+                    $("#photoAttachmentmsg").html(
+                        '<span style="color:red">'
+                        + fileTypeInvalidMsg
+                        + '<span>');
+                }else{
+                    if (oFile.files[0].size > 102400) {
+                        $("#photoAttachmentmsg").html(
+                            '<span style="color:red">'
+                            + requiredfield
+                            + '<span>');
+
+                        //$("#uploadPhoto").val('');
+                    } else {
+                        $("#photoAttachmentmsg").html('');
+                        readURLPhoto(oFile)
+                    }
+
+                }
+            };
+
+            function readURLPhoto(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#photoImage')
+                            .attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            };
+
+        </script>
 
 <jsp:include page="common/basicFooter.jsp"/>
