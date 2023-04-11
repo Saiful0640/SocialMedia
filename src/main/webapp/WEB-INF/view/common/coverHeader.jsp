@@ -19,12 +19,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 
-
-
     <title>MyBookPlus</title>
 
     <style>
 
+       /* !* CSS code *!
+        .modal {
+            display: none; !* Hidden by default *!
+            position: fixed; !* Stay in place *!
+            z-index: 1; !* Sit on top *!
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; !* Enable scroll if needed *!
+            background-color: rgb(0,0,0); !* Fallback color *!
+            background-color: rgba(0,0,0,0.4); !* Black w/ opacity *!
+        }
+
+        !* Animation *!
+        .modal-content {
+            position: relative;
+            animation-name: sketch-animation;
+            animation-duration: 0.8s;
+        }
+
+        @keyframes sketch-animation {
+            0% {top: -50px; opacity: 0;}
+            100% {top: 0px; opacity: 1;}
+        }
+*/
     </style>
 
 </head>
@@ -114,5 +138,3 @@
     </div>
 </nav>
 
-</body>
-</html>
