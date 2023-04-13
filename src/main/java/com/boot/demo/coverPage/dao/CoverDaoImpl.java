@@ -1,13 +1,12 @@
-package com.boot.demo.coverPage;
+package com.boot.demo.coverPage.dao;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Repository
 public class CoverDaoImpl implements CoverPageIDao {
@@ -19,6 +18,18 @@ public class CoverDaoImpl implements CoverPageIDao {
     private JdbcTemplate jdbcTemplate;
 
     @Override
+    public void saveImage(long userId, byte[] imageData) {
+         simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
+                .withProcedureName("insert_profile_image");
+
+        SqlParameterSource inParams = new MapSqlParameterSource()
+                .addValue("p_user_id", userId)
+                .addValue("p_image_data", imageData);
+
+        simpleJdbcCall.execute(inParams);
+    }
+
+    /*@Override
     public void updateProfileImage(long id, byte[] image) {
 
         simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("insert_profile_image");
@@ -29,5 +40,7 @@ public class CoverDaoImpl implements CoverPageIDao {
         inParams.put("p_image_data", image);
 
         simpleJdbcCall.execute(inParams);
-    }
+    }*/
+
+
 }

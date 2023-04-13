@@ -16,7 +16,7 @@
 
         <%--Profile page work start--%>
         <div>
-            <img src="./lion.png" alt="" class="front">
+            <img src="./lion.png" id="profileid" alt="" class="front">
             <label for="profilePhoto">
                 <img class="icon" id="profilePhoto" src="/resources/file/profileCamera.png" style="height: 20px; width: 20px;" data-toggle="modal" data-target="#staticBackdrop">
             </label>
@@ -33,81 +33,103 @@
                     </div>
                     <div class="modal-body">
 
-
-                        <div class="col-md-8 control-label">
-                            <label class="col-md-4 col-sm-3 control-label"><strong>Photo</strong></label>
-                            <div id="dvPreviewPhoto" class="col-md-4 control-label thumbnail" style="width: 150px; height: 150px">
-
-
-
-                                <img id="photoImage" alt="image pay nai" src="/resources/file/noImage.png" style="width: 150px; height: 150px" />
+                        <form:form method="post" action="/userProfile">
+                            <div class="col-md-8 control-label">
+                                <label class="col-md-4 col-sm-3 control-label"><strong>Photo</strong></label>
+                                <div id="dvPreviewPhoto" class="col-md-4 control-label thumbnail" style="width: 150px; height: 150px">
 
 
+
+                                    <img id="photoImage" alt="image pay nai" src="/resources/file/noImage.png" style="width: 150px; height: 150px" />
+
+
+                                </div>
+
+                                <div class="col-md-6 control-label">
+                                    <input type="file" id="uploadPhoto" name="uploadPhoto" onchange="checkFileSize()"
+                                           class="valid" onkeypress="goToNext(event,'uploadSignature')">
+                                    <p id="photoAttachmentmsg"></p>
+                                </div>
                             </div>
-
-                            <div class="col-md-6 control-label">
-                                <input type="file" id="uploadPhoto" name="uploadPhoto" onchange="checkFileSize()"
-                                       class="valid" onkeypress="goToNext(event,'uploadSignature')">
-                                <p id="photoAttachmentmsg"></p>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button submit" class="btn btn-primary" id="saveChangesBtn" data-dismiss="modal">Save changes</button>
                     </div>
+                        </form:form>
                 </div>
             </div>
         </div>
 
         <%--Profile page work END--%>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
 
-            function checkFileSize() {
-                //alert('hello');
-                var oFile = document.getElementById("uploadPhoto"); // <input type="file" id="fileUpload" accept=".jpg,.png,.gif,.jpeg"/>
-                var filePath = oFile.value;
-                var fileTypeInvalidMsg = "File must be an image !!!"
-                var requiredfield = "File size must be less than 100 kb !!!";
-                //alert(oFile.size);
+            $(document).ready(function() {
 
-                var allowedExtensions  = /^([a-zA-Z0-9\s_\\.\-:()])+(\.jpg|\.jpeg|\.gif|\.png|\.bmp)$/i;
+                // Function to display selected photo in the preview image
+                function readURLPhoto(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            $('#photoImage').attr('src', e.target.result);
+                        };
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
 
-                if(!allowedExtensions.exec(filePath)){
-                    $("#uploadPhoto").val('');
-                    $("#photoAttachmentmsg").html(
-                        '<span style="color:red">'
-                        + fileTypeInvalidMsg
-                        + '<span>');
-                }else{
-                    if (oFile.files[0].size > 102400) {
+                // Function to check file size and type
+                function checkFileSize() {
+                    var oFile = document.getElementById("uploadPhoto");
+                    var filePath = oFile.value;
+                    var fileTypeInvalidMsg = "File must be an image !!!"
+                    var requiredfield = "File size must be less than 100 kb !!!";
+
+                    var allowedExtensions  = /^([a-zA-Z0-9\s_\\.\-:()])+(\.jpg|\.jpeg|\.gif|\.png|\.bmp)$/i;
+
+                    if(!allowedExtensions.exec(filePath)){
+                        $("#uploadPhoto").val('');
                         $("#photoAttachmentmsg").html(
                             '<span style="color:red">'
-                            + requiredfield
+                            + fileTypeInvalidMsg
                             + '<span>');
-
-                        //$("#uploadPhoto").val('');
                     } else {
-                        $("#photoAttachmentmsg").html('');
-                        readURLPhoto(oFile)
+                        if (oFile.files[0].size > 102400) {
+                            $("#photoAttachmentmsg").html(
+                                '<span style="color:red">'
+                                + requiredfield
+                                + '<span>');
+                        } else {
+                            $("#photoAttachmentmsg").html('');
+                            readURLPhoto(oFile);
+                        }
                     }
+                };
+
+                // Function to update profile image with selected photo
+                function updateProfilePhoto() {
+                    var photoSrc = $('#photoImage').attr('src');
+                    $('#profileid').attr('src', photoSrc);
+                    $('#photoImageCDrop').attr('src', photoSrc);
+                    $('#photoImageChead').attr('src', photoSrc);
 
                 }
-            };
 
-            function readURLPhoto(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        $('#photoImage')
-                            .attr('src', e.target.result);
-                    };
-                    reader.readAsDataURL(input.files[0]);
-                }
-            };
+                // Event listener for file input change
+                $('#uploadPhoto').on('change', function() {
+                    checkFileSize();
+                });
+
+                // Event listener for Save Changes button click
+                $('#saveChangesBtn').on('click', function() {
+                    updateProfilePhoto();
+                });
+
+            });
+
 
         </script>
+
 
 <jsp:include page="common/basicFooter.jsp"/>
