@@ -1,10 +1,10 @@
-package com.boot.demo.Login;
+package com.boot.demo.Login.LController;
 
 import com.boot.demo.Login.Service.LoginService;
+import com.boot.demo.Login.LoginModel.Sginup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;

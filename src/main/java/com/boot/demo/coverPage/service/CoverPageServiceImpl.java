@@ -1,6 +1,6 @@
 package com.boot.demo.coverPage.service;
 
-import com.boot.demo.Login.Sginup;
+import com.boot.demo.Login.LoginModel.Sginup;
 import com.boot.demo.coverPage.dao.CoverPageIDao;
 import com.boot.demo.coverPage.dao.SginupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +9,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 @Service
 public class CoverPageServiceImpl implements CoverPageIservice {

@@ -8,8 +8,9 @@
     <title>Login&SginUp</title>
 
     <link rel="stylesheet" href="/resources/css/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /><body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <body>
                 <H1>MY BOOK PLUS<</H1>
                 <h2> Sign in/up Form</h2>
                 <div class="container" id="container">
@@ -25,7 +26,7 @@
                             <input type="text" name="name" placeholder="Name" />
                             <input type="email" name="email" placeholder="Email" />
                             <input type="password" name="password" placeholder="Password" />
-                            <button>Sign Up</button>
+                            <button >Sign Up</button>
                         </form>
                     </div>
                     <div class="form-container sign-in-container">
@@ -64,6 +65,17 @@
 <script rel="script" src="/resource/js/login.js" ></script>
 <script>
 
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active")
+    })
+
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active")
+    });
 
 </script>
 </body>

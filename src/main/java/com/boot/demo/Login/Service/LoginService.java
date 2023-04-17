@@ -1,6 +1,6 @@
 package com.boot.demo.Login.Service;
 
-import com.boot.demo.Login.Sginup;
+import com.boot.demo.Login.LoginModel.Sginup;
 
 public interface LoginService {
 

@@ -1,7 +1,6 @@
 package com.boot.demo.coverPage.CoverPageController;
 
 import com.boot.demo.Login.Service.LoginService;
-import com.boot.demo.Login.Sginup;
 import com.boot.demo.coverPage.service.CoverPageIservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

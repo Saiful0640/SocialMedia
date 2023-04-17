@@ -1,7 +1,7 @@
 package com.boot.demo.Login.Service;
 
-import com.boot.demo.Login.IDao;
-import com.boot.demo.Login.Sginup;
+import com.boot.demo.Login.LoginDao.IDao;
+import com.boot.demo.Login.LoginModel.Sginup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

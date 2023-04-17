@@ -1,4 +1,4 @@
-package com.boot.demo.Login;
+package com.boot.demo.Login.LoginModel;
 
 import javax.persistence.*;
 import java.util.Arrays;
