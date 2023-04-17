@@ -77,6 +77,7 @@
         container.classList.remove("right-panel-active")
     });
 
+
 </script>
 </body>
 </html>
