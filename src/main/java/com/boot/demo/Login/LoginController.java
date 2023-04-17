@@ -88,6 +88,8 @@ public class LoginController {
         try {
             Sginup userInfo = loginService.loginUser(email, password);
             session.setAttribute("name", userInfo.getName());
+            session.setAttribute("id", userInfo.getId());
+            session.setAttribute("image", userInfo.getImage());
             if (userInfo !=null){
                 mav.setViewName("Profile");
                 mav.addObject("message","Login SuccessFull");

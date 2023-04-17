@@ -49,26 +49,51 @@ public class IDao implements IDaoImpl {
 
     }
 
-    public Sginup loginUser(String email, String password) {
-        Sginup loggedInUser = new Sginup();
-        try {
-            simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("logins");
+//    public Sginup loginUser(String email, String password) {
+//        Sginup loggedInUser = new Sginup();
+//        try {
+//            simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("logins");
+//
+//            Map<String, Object> inParam = new HashMap<String, Object>();
+//            inParam.put("email", email);
+//            inParam.put("password", password);
+//
+//            Map<String, Object> outParamMap = simpleJdbcCall.execute(new MapSqlParameterSource().addValues(inParam));
+//
+//
+//            loggedInUser.setName((String) outParamMap.get("oname"));
+//            loggedInUser.setId((long) outParamMap.get("oid"));
+//
+//            return loggedInUser;
+//        } catch (Exception e){
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
+public Sginup loginUser(String email, String password) {
+    Sginup loggedInUser = new Sginup();
+    try {
+        simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("logins");
 
-            Map<String, Object> inParam = new HashMap<String, Object>();
-            inParam.put("email", email);
-            inParam.put("password", password);
+        Map<String, Object> inParam = new HashMap<String, Object>();
+        inParam.put("email", email);
+        inParam.put("password", password);
 
-            Map<String, Object> outParamMap = simpleJdbcCall.execute(new MapSqlParameterSource().addValues(inParam));
+        SqlParameterSource in = new MapSqlParameterSource(inParam);
+        Map<String, Object> outParamMap = simpleJdbcCall.execute(in);
 
-
+        if (outParamMap != null) {
             loggedInUser.setName((String) outParamMap.get("oname"));
-
-            return loggedInUser;
-        } catch (Exception e){
-            e.printStackTrace();
-            return null;
+            loggedInUser.setId(Long.parseLong((String) outParamMap.get("oid")));
+            loggedInUser.setImage((String) outParamMap.get("oimage"));
         }
+
+        return loggedInUser;
+    } catch (Exception e){
+        e.printStackTrace();
+        return null;
     }
+}
 
 
 

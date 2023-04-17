@@ -16,7 +16,7 @@
 
         <%--Profile page work start--%>
         <div>
-            <img src="./lion.png" id="profileid" alt="" class="front">
+            <img src="/resources/file/<%= session.getAttribute("image") != null ? session.getAttribute("image") : "./lion.png" %>" id="profileid" alt="" class="front">
             <label for="profilePhoto">
                 <img class="icon" id="profilePhoto" src="/resources/file/profileCamera.png" style="height: 20px; width: 20px;" data-toggle="modal" data-target="#staticBackdrop">
             </label>
@@ -33,32 +33,24 @@
                     </div>
                     <div class="modal-body">
 
-                        <form:form method="post" action="/userProfile">
+                        <form:form method="post" action="/coverpage" enctype="multipart/form-data">
                             <div class="col-md-8 control-label">
                                 <label class="col-md-4 col-sm-3 control-label"><strong>Photo</strong></label>
                                 <div id="dvPreviewPhoto" class="col-md-4 control-label thumbnail" style="width: 150px; height: 150px">
-
-
-
                                     <img id="photoImage" alt="image pay nai" src="/resources/file/noImage.png" style="width: 150px; height: 150px" />
-
-
                                 </div>
-
                                 <div class="col-md-6 control-label">
-                                    <input type="file" id="uploadPhoto" name="uploadPhoto" onchange="checkFileSize()"
-                                           class="valid" onkeypress="goToNext(event,'uploadSignature')">
+                                    <input type="file" id="uploadPhoto" name="image" onchange="checkFileSize()" class="valid" onkeypress="goToNext(event,'uploadSignature')">
                                     <p id="photoAttachmentmsg"></p>
                                 </div>
                             </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button submit" class="btn btn-primary" id="saveChangesBtn" data-dismiss="modal">Save changes</button>
-                    </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" id="saveChangesBtn">Save changes</button>
+                            </div>
                         </form:form>
-                </div>
+
+                    </div>
             </div>
         </div>
 
@@ -127,7 +119,6 @@
                 });
 
             });
-
 
         </script>
 

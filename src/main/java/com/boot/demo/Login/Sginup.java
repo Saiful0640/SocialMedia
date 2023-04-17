@@ -9,7 +9,7 @@ public class Sginup {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private  long id;
+    private  Long id;
     @Column(name ="name")
     private String name;
     @Column(name="email")
@@ -17,9 +17,9 @@ public class Sginup {
     @Column(name = "password")
     private String password;
 
-    @Lob
-    @Column(name = "uimage", columnDefinition="BLOB")
-    private byte[] image;
+
+    @Column(name = "uimage")
+    private String image;
 
 
     public Sginup() {
@@ -64,11 +64,11 @@ public class Sginup {
         this.password = password;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -79,7 +79,7 @@ public class Sginup {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", image=" + Arrays.toString(image) +
+                ", image=" + image +
                 '}';
     }
 }

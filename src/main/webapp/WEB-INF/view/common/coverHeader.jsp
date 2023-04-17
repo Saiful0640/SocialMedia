@@ -83,8 +83,8 @@
                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                    <li class="nav-item">
                        <a class="nav-link me-5" href="/coverpage"><img id="photoImageChead" class="me-1" alt="image pay nai"
-                                                                       src="/resources/file/profile.jpeg"
-                                                                       style="width: 25px; height: 25px"><span><%out.print(session.getAttribute("name")); %></span></a>
+                                                                       src="/resources/file/<%= session.getAttribute("image") != null ? session.getAttribute("image") : "./profile.jpeg" %>"
+                                                                       style="width: 25px; height: 25px; border-radius: 50%"><span><%out.print(session.getAttribute("name")); %></span></a>
                    </li>
                    <li class="nav-item">
                        <a class="nav-link" href="#"><i class="fa-brands fa-facebook-messenger"></i></a>
