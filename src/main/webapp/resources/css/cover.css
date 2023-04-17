@@ -1,0 +1,55 @@
+.back{
+
+    position: relative;
+    height:312px;
+    width: 920px;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(117,118,120,1) 0%, rgba(247,242,247,1) 95%, rgba(56,53,82,1) 100%);
+}
+.img1{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.front{
+    position: absolute;
+    height: 180px;
+    width: 180px;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(117,118,120,1) 0%, rgba(247,242,247,1) 100%, rgba(56,53,82,1) 100%);
+    border: 2px solid white;
+    left: 40px;
+    bottom: -146px;
+    border-radius: 50%;
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.cover-btn{
+    background-color: RGBA(117,118,120,.7);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 5px;
+}
+
+.icon{
+    background-color: #e4e6eb;
+    border-radius: 50%;
+    outline: 6px solid #e4e6eb;
+    /*position: absolute;*/
+    left: 183px;
+    top: 415px;
+}
+
+#profilePhoto{
+    position: absolute;
+}
