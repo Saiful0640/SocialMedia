@@ -7,11 +7,11 @@
 
 
     <div class="back position-relative">
-        <img src="./lion.png" class="img1" alt="">
-        <label class="position-absolute cover-btn">
+        <img src="/resources/file/<%= session.getAttribute("cimage") != null ? session.getAttribute("cimage") : "./lion.png" %>" id="coverid" class="img2" alt="">
+        <label class="position-absolute cover-btn" data-toggle="modal" data-target="#staticBackdrop1">
             <img src="/resources/file/camera.png" style="height: 20px; width: 20px;background: currentColor;"
                  class="me-1"><span>Add Cover Photo</span>
-            <input type="file" id="coverPhoto" style="display: none;">
+
         </label>
 
         <%--Profile page work start--%>
@@ -51,13 +51,51 @@
                         </form:form>
 
                     </div>
+             </div>
+               </div>
+        </div>
+
+        <%--cover photo modal start--%>
+
+        <div class="modal fade" id="staticBackdrop1" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabe2">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form:form method="post" action="/coverpage" enctype="multipart/form-data">
+                            <div class="col-md-8 control-label">
+                                <label class="col-md-4 col-sm-3 control-label"><strong>Photo</strong></label>
+                                <div id="dvPreviewPhoto2" class="col-md-4 control-label thumbnail" style="width: 350px; height: 250px">
+                                    <img id="photoImage2" alt="image pay nai" src="/resources/file/noImage.png" style="width: 150px; height: 150px" />
+                                </div>
+                                <div class="col-md-6 control-label">
+                                    <input type="file" id="uploadPhoto2" name="image" onchange="checkFile()" class="valid" onkeypress="goToNext(event,'uploadSignature')">
+                                    <p id="photoAttachmentmsg2"></p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" id="saveChangesBtn2">Save changes</button>
+                            </div>
+                        </form:form>
+
+                    </div>
+                </div>
             </div>
         </div>
+        <%--cover photo modal end --%>
+
 
         <%--Profile page work END--%>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
-
+            /*profile photo js  start*/
             $(document).ready(function() {
 
                 // Function to display selected photo in the preview image
@@ -120,6 +158,70 @@
 
             });
 
+            /*profile photo js end*/
+
+
+            /*cover photo js Start*/
+
+                // Function to display selected photo in the preview image
+                function readURLPhoto2(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            $('#photoImage2').attr('src', e.target.result);
+                        };
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+
+                // Function to check file size and type
+                function checkFile() {
+                    var oFile = document.getElementById("uploadPhoto2");
+                    var filePath = oFile.value;
+                    var fileTypeInvalidMsg = "File must be an image !!!"
+                    var requiredfield = "File size must be less than 200 kb !!!";
+
+                    var allowedExtensions  = /^([a-zA-Z0-9\s_\\.\-:()])+(\.jpg|\.jpeg|\.gif|\.png|\.bmp)$/i;
+
+                    if(!allowedExtensions.exec(filePath)){
+                        $("#uploadPhoto2").val('');
+                        $("#photoAttachmentmsg2").html(
+                            '<span style="color:red">'
+                            + fileTypeInvalidMsg
+                            + '<span>');
+                    } else {
+                        if (oFile.files[0].size > 102400) {
+                            $("#photoAttachmentmsg2").html(
+                                '<span style="color:red">'
+                                + requiredfield
+                                + '<span>');
+                        } else {
+                            $("#photoAttachmentmsg2").html('');
+                            readURLPhoto2(oFile);
+                        }
+                    }
+                };
+
+                // Function to update profile image with selected photo
+                function updateProfilePhoto2() {
+                    var photoSrc = $('#photoImage2').attr('src');
+                    $('#coverid').attr('src', photoSrc);
+
+
+                }
+
+                // Event listener for file input change
+                $('#uploadPhoto2').on('change', function() {
+                    checkFileSize();
+                });
+
+                // Event listener for Save Changes button click
+                $('#saveChangesBtn2').on('click', function() {
+                    updateProfilePhoto2();
+                });
+
+
+            /*Cover photo js End*/
         </script>
 
 

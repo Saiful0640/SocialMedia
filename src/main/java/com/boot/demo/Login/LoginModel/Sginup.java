@@ -16,20 +16,29 @@ public class Sginup {
     private String email;
     @Column(name = "password")
     private String password;
-
-
     @Column(name = "uimage")
     private String image;
+    @Column(name="cimage")
+    private  String cimage;
 
+    public String getCimage() {
+        return cimage;
+    }
+
+    public void setCimage(String cimage) {
+        this.cimage = cimage;
+    }
 
     public Sginup() {
     }
 
-    public Sginup(long id, String name, String email, String password) {
+    public Sginup(Long id, String name, String email, String password, String image, String cimage) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.image = image;
+        this.cimage = cimage;
     }
 
     public long getId() {
@@ -79,7 +88,8 @@ public class Sginup {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", image=" + image +
+                ", image='" + image + '\'' +
+                ", cimage='" + cimage + '\'' +
                 '}';
     }
 }
