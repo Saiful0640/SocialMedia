@@ -17,7 +17,8 @@ public class CoverPageServiceImpl implements CoverPageIservice {
     CoverPageIDao coverPageIDao;
     @Autowired
     SginupRepository sginupRepository;
-    private final String FOLDER_PATH = "C:/Users/CNS/Desktop/SocialMedia/src/main/webapp/resources/file/";
+   // private final String FOLDER_PATH = "C:/Users/CNS/Desktop/SocialMedia/src/main/webapp/resources/file/";
+    private final String FOLDER_PATH = "C:/Users/CNS/Desktop/SocialMedia/src/main/webapp/resources/uplodingFile";
 
 
     @Override
@@ -30,5 +31,17 @@ public class CoverPageServiceImpl implements CoverPageIservice {
         sginup.setImage(fileName);
         sginupRepository.save(sginup);
 
+    }
+
+    @Override
+    public void saveCoverImage(long id, MultipartFile file) throws Exception {
+
+        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+        String filePath = FOLDER_PATH + fileName;
+        file.transferTo(new File(filePath));
+
+        Sginup sginup = sginupRepository.findById(id).orElseThrow(()-> new Exception("user not found with id: "+ id));
+        sginup.setcImage(fileName);
+        sginupRepository.save(sginup);
     }
 }

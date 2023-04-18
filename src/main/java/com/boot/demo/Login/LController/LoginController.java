@@ -90,6 +90,7 @@ public class LoginController {
             session.setAttribute("name", userInfo.getName());
             session.setAttribute("id", userInfo.getId());
             session.setAttribute("image", userInfo.getImage());
+            session.setAttribute("cimage", userInfo.getcImage());
             if (userInfo !=null){
                 mav.setViewName("Profile");
                 mav.addObject("message","Login SuccessFull");

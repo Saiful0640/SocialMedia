@@ -75,7 +75,7 @@
                                     <img id="photoImage2" alt="image pay nai" src="/resources/file/noImage.png" style="width: 150px; height: 150px" />
                                 </div>
                                 <div class="col-md-6 control-label">
-                                    <input type="file" id="uploadPhoto2" name="image" onchange="checkFile()" class="valid" onkeypress="goToNext(event,'uploadSignature')">
+                                    <input type="file" id="uploadPhoto2" name="cImage" onchange="checkFile()" class="valid" onkeypress="goToNext(event,'uploadSignature')">
                                     <p id="photoAttachmentmsg2"></p>
                                 </div>
                             </div>

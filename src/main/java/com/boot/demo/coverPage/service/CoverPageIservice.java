@@ -8,6 +8,7 @@ public interface CoverPageIservice {
 
 
         void saveImage(long id, MultipartFile file) throws Exception;
+        void saveCoverImage(long id, MultipartFile file) throws Exception;
 
 
 }
