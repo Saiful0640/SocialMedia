@@ -18,7 +18,7 @@ public class CoverPageServiceImpl implements CoverPageIservice {
     @Autowired
     SginupRepository sginupRepository;
    // private final String FOLDER_PATH = "C:/Users/CNS/Desktop/SocialMedia/src/main/webapp/resources/file/";
-    private final String FOLDER_PATH = "C:/Users/CNS/Desktop/SocialMedia/src/main/webapp/resources/uplodingFile";
+    private final String FOLDER_PATH = "C:/Users/CNS/Desktop/SocialMedia/src/main/webapp/resources/uplodingFile/";
 
 
     @Override

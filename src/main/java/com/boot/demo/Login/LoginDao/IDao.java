@@ -87,6 +87,7 @@ public Sginup loginUser(String email, String password) {
             loggedInUser.setName((String) outParamMap.get("oname"));
             loggedInUser.setId(Long.parseLong((String) outParamMap.get("oid")));
             loggedInUser.setImage((String) outParamMap.get("oimage"));
+            loggedInUser.setcImage((String) outParamMap.get("ocimage"));
         }
 
         return loggedInUser;

@@ -7,7 +7,7 @@
 
 
     <div class="back position-relative">
-        <img src="/resources/file/<%= session.getAttribute("cimage") != null ? session.getAttribute("cimage") : "./lion.png" %>" id="coverid" class="img2" alt="">
+        <img src="/resources/uplodingFile/<%= session.getAttribute("cimage") != null ? session.getAttribute("cimage") : "./lion.png" %>" id="coverid" class="img2" alt="">
         <label class="position-absolute cover-btn" data-toggle="modal" data-target="#staticBackdrop1">
             <img src="/resources/file/camera.png" style="height: 20px; width: 20px;background: currentColor;"
                  class="me-1"><span>Add Cover Photo</span>
