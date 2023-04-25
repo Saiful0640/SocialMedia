@@ -1,0 +1,64 @@
+.info{
+    height: 400px;
+    width: 400px;
+    border-radius: 5px;
+    position: relative;
+}
+
+#infos{
+    position: absolute;
+    margin-top: 10px;
+}
+
+.addBio{
+    position: absolute;
+    margin-top: 45px;
+    border: none;
+    margin-left: 15px;
+    border-radius: 5px;
+    width: 370px;
+    padding: 4px;
+}
+.editDetails{
+    position: absolute;
+    margin-top: 91px;
+    border: none;
+    margin-left: 15px;
+    border-radius: 5px;
+    width: 370px;
+    padding: 4px;
+}
+
+.addHobbies{
+    position: absolute;
+    margin-top: 135px;
+    border: none;
+    margin-left: 15px;
+    border-radius: 5px;
+    width: 370px;
+    padding: 4px;
+}
+
+.addFeature{
+    position: absolute;
+    margin-top: 175px;
+    border: none;
+    margin-left: 15px;
+    border-radius: 5px;
+    width: 370px;
+    padding: 4px;
+}
+
+.post{
+    height: 150px;
+    width: 550px;
+    border-radius: 5px;
+    position: relative;
+    margin-left: -49px;
+}
+
+.postimag{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 5px;
+}

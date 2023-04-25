@@ -9,20 +9,68 @@
     <div class="back position-relative">
         <img src="/resources/uplodingFile/<%= session.getAttribute("cimage") != null ? session.getAttribute("cimage") : "./lion.png" %>" id="coverid" class="img2" alt="">
         <label class="position-absolute cover-btn" data-toggle="modal" data-target="#staticBackdrop1">
-            <img src="/resources/file/camera.png" style="height: 20px; width: 20px;background: currentColor;"
-                 class="me-1"><span>Add Cover Photo</span>
-
+            <img src="/resources/file/camera.png" style="height: 20px; width: 20px;background: currentColor;" class="me-1"><span>Add Cover Photo</span>
         </label>
 
         <%--Profile page work start--%>
-        <div>
+        <div style="border-bottom: #cccccc solid 1px;">
             <img src="/resources/file/<%= session.getAttribute("image") != null ? session.getAttribute("image") : "./lion.png" %>" id="profileid" alt="" class="front">
             <label for="profilePhoto">
                 <img class="icon" id="profilePhoto" src="/resources/file/profileCamera.png" style="height: 20px; width: 20px;" data-toggle="modal" data-target="#staticBackdrop">
             </label>
+            <h3 style="margin-left: 225px;"><span><%out.print(session.getAttribute("name")); %></span></h3>
+            <p style="margin-left: 225px; color: #a2a3b7; font-size: 14px; margin-bottom: 78px;">120 friends</p>
+            <button id="editprofilebutton"  data-toggle="modal" data-target="#staticBackdrop"><img src="/resources/file/edit.gif" style="height: 20px; width: 20px;"> Edit Profile</button>
         </div>
 
-        <div class="modal fade" id="staticBackdrop" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <%--navbar--%>
+       <div>
+           <nav class="navbar navbar-expand-lg ">
+
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                       <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="/coverpagePost">Posts</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="#">About</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="#">Friends</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="#">Videos</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="#">Posts</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="#">Check-ins</a>
+                       </li>
+                       <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                               More
+                           </a>
+                           <ul class="dropdown-menu">
+                               <li><a class="dropdown-item" href="#">Action</a></li>
+                               <li><a class="dropdown-item" href="#">Another action</a></li>
+                               <li><hr class="dropdown-divider"></li>
+                               <li><a class="dropdown-item" href="#">Something else here</a></li>
+                           </ul>
+                       </li>
+
+                       <li>
+                           <button id="dot"><img style="height: 20px; width: 20px;" src="/resources/file/dot.png"></button>
+                       </li>
+                   </ul>
+
+               </div>
+
+           </nav>
+       </div>
+
+    <%--profile modal Start --%>
+    <div class="modal fade" id="staticBackdrop" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -55,6 +103,7 @@
                </div>
         </div>
 
+        <%--profile modal End --%>
         <%--cover photo modal start--%>
 
         <div class="modal fade" id="staticBackdrop1" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -90,8 +139,8 @@
             </div>
         </div>
         <%--cover photo modal end --%>
-
-
+ </div>
+</div>
         <%--Profile page work END--%>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>

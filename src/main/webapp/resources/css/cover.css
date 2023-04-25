@@ -59,3 +59,20 @@
 #profilePhoto{
     position: absolute;
 }
+
+#editprofilebutton{
+    position: absolute;
+    left: 803px;
+    bottom: -153px;
+    border-radius: 5px;
+    border: none;
+    /* padding: 1px; */
+    width: 113px;
+}
+
+#dot{
+    border: none;
+    position: absolute;
+    right: 2px;
+    border-radius: 5px;
+}

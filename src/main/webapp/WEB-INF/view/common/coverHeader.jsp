@@ -12,6 +12,7 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="/resources/css/profile.css" rel="stylesheet">
     <link href="/resources/css/cover.css" rel="stylesheet">
+    <link href="/resources/css/info.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -23,32 +24,7 @@
 
     <style>
 
-       /* !* CSS code *!
-        .modal {
-            display: none; !* Hidden by default *!
-            position: fixed; !* Stay in place *!
-            z-index: 1; !* Sit on top *!
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto; !* Enable scroll if needed *!
-            background-color: rgb(0,0,0); !* Fallback color *!
-            background-color: rgba(0,0,0,0.4); !* Black w/ opacity *!
-        }
 
-        !* Animation *!
-        .modal-content {
-            position: relative;
-            animation-name: sketch-animation;
-            animation-duration: 0.8s;
-        }
-
-        @keyframes sketch-animation {
-            0% {top: -50px; opacity: 0;}
-            100% {top: 0px; opacity: 1;}
-        }
-*/
     </style>
 
 </head>
@@ -70,7 +46,7 @@
            <div class="col-md-8 d-flex">
                <ul class="navbar-nav  mb-2 mb-lg-0 list-inline mx-auto justify-content-center">
                    <li class="nav-item" >
-                       <a class="nav-link active mx-5" aria-current="page" href="/sginIn"><i class="fa fa-home fa-lg"></i></a>
+                       <a class="nav-link active mx-5" aria-current="page" href="/home"><i class="fa fa-home fa-lg"></i></a>
                    </li>
 
                    <li class="nav-item">

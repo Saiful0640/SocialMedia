@@ -25,14 +25,10 @@ public class LoginController {
         return new ModelAndView("sginUP");
     }
 
-  /*  @RequestMapping(value = "/saveUser" ,method = RequestMethod.POST)
-    public ModelAndView saveUser(Sginup sginup){
-
-        Sginup sginup1 = new Sginup();
-        sginup1 = loginService.saveUserInfo(sginup);
-
-
-    }*/
+    @RequestMapping(value ="home", method = RequestMethod.GET)
+    public  ModelAndView showProfile(){
+        return new ModelAndView("Profile");
+    }
 
     @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
     public ModelAndView saveUser(@Valid Sginup sginup, BindingResult result  ) {
@@ -103,5 +99,7 @@ public class LoginController {
         }
         return mav;
     }
+
+
 
 }
